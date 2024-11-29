@@ -119,6 +119,10 @@
         width: 100%;
     }
     .setting-header{
+            margin: 0 auto !important;
+    width: 52% !important;
+    padding: 0;
+    left: 32%;
         display: flex;
         justify-content: space-between;
         flex-direction: row;
