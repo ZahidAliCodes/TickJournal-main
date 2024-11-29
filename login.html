@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css files -->
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="login-signup.css">
+     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>Login</title>
+</head>
+<body>
+    <header>
+        <div class="header-container shadow-bg">
+            <div class="logo">
+                <a href="index.html"><img src="Logo.svg" alt="TickJournal"></a>
+            </div>
+                <div class="shodow-active">
+                    <nav>
+                        <ul>
+                            <li><a href="#Features">Features</a></li>
+                            <li><a href="#Pricing">Pricing</a></li>
+                            <li><a href="dashboard.html">Journal</a></li>
+                        </ul>
+                        <div class="signup-btn">
+                            <div class="gradient-box">
+                                <a href="rigister.html">Register</a>
+                            </div>
+                            <div class="gradient-box">
+                                <a href="login.html">Login</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            <div class="menu-btn">
+                <img src="menu-bar.svg" alt="Menu Icon" class="menu-icon">
+            </div>
+        </div>
+    </header>
+   <div class="login-form-container">
+        <div class="login-form-inner">
+            <div class="form-headings">
+                <div class="user-bg">
+                    <img src="user.svg" alt="user">
+                </div>
+                <p>Login to TickJournal</p>
+            </div>
+            <form class="login-form">
+                <div class="input-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-bg">
+                        <input required="" type="email" id="email" placeholder="Enter email">
+                    </div>
+                </div>
+                <div class="input-group password-input-group">
+                    <label for="password">New Passoword</label>
+                    <div class="input-bg">
+                      <input required type="password" placeholder="Password" id="password" minlength="8" />
+                    </div>
+                    <div class="toggle-password-type" onclick="togglePassword('password', 'eye-password-hide', 'eye-password-show')">
+                      <img src="Show Icon.svg" id="eye-password-hide" class="eye" alt="Hide Password">
+                      <img src="Hide Icon.svg" id="eye-password-show" class="eye" alt="Show Password" style="display: none;">
+                    </div>
+                  </div>
+                    <div class="input-group">
+                        <input class="submit-btn" type="submit" value="Login">
+                    </div>
+                    <div class="horizontal">
+                        <h4><span>or</span></h4>
+                    </div>
+                    <div class="Social-link">
+                        <a href="#google">
+                            <span><img src="Google logo.svg" alt="" height="20px"></span>Sign up with Google
+                        </a>
+                        <a href="#linkdin">
+                            <span><img src="linkdin.svg" alt="" height="20px"></span>Sign up with Linkedin
+                        </a>
+                    </div>
+            </form>
+        </div>
+        <div class="other-links">
+            <span>Don’t have an account?</span>
+            <a href="rigister.html">Sign Up</a>
+        </div>
+   </div>
+   <footer>
+    <div class="ft-container">
+        <div class="ft-main">
+            <p>© 2023, All Rights Reserved to TickJournal</p>
+            <ul>
+                <a href="#terms">
+                    <img src="Vector-ft.svg" alt="">
+                    <span>Terms</span>
+                </a>
+                <a href="#privacy">
+                    <img src="Vector-ft.svg" alt="">
+                    <span>Privacy</span>
+                </a>
+                <a href="#support">
+                    <img src="Vector-ft.svg" alt="">
+                    <span>Support</span>
+                </a>
+            </ul>
+        </div>
+    </div>
+</footer>
+   <script src="index.js"></script>
+</body>
+</html>

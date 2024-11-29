@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css files -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="stats.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <title>TickJournal</title>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="new-trades plus-module">
+            <a href="#popup2" class="popup-trigger">
+                <div class="trade-bg2">
+                   <h6>+</h6>
+                </div>
+            </a>
+            <div id="popup2" class="overlay">
+                <div class="popup">
+                  <div class="pop-bg">
+                    <a class="close" href="#"><img src="xmark.svg" alt="Close"></a>
+                    <h1 id="dynamicHeading2">New Trade</h1> <!-- Second Popup Heading -->
+                    <button id="btnGeneral2" class="content-btn active" onclick="changeContent(3, 'New Trade', this, 2)"><h1>General</h1></button>
+                    <button id="btnJournal2" class="content-btn" onclick="changeContent(4, 'Edit Trade', this, 2)"><h1>Journal</h1></button>
+                    <div id="div3" class="content-div">
+                        <form>
+                            <div class="setting-grid2">
+                                <div class="input-group input-group1">
+                                    <label>Market</label>
+                                    <div class="input-bg">
+                                        <input type="text" placeholder="Stock" required>
+                                    </div>
+                                </div>
+                                <div class="input-group input-group1">
+                                    <label for="name">Symbol</label>
+                                    <div class="input-bg">
+                                        <input required placeholder="HDFCBANK" type="text">
+                                    </div>
+                                </div>
+                                <div class="input-group input-group2">
+                                    <label>Target</label>
+                                    <div class="input-bg">
+                                        <input required placeholder="2000" type="number">
+                                    </div>
+                                </div>
+                                <div class="input-group input-group2">
+                                    <label>Stop-Loss</label>
+                                    <div class="input-bg">
+                                        <input required placeholder="80" type="number">
+                                    </div>
+                                </div>
+                                <input type="submit" class="submit-pop input-group2" value="LONG">
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date / Time</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Fess</th>
+                                        <th>Action</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="datetime-local">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="01" required>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="2000" required>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="2000" required>
+                                            </div>
+                                        </td>
+                                        <td class="buy-bts">
+                                            <div class="td-wrapper">
+                                                <h1>BUY</h1>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="xmrk-btn">
+                                                <img src="xmark.svg" alt="mark">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                
+                            </table>
+                            <div class="pop-up-resposive">
+                                <div class="up-resposive">
+                                    <div class="input-group">
+                                        <label>Date / Time</label>
+                                        <div class="input-bg">
+                                            <input type="datetime-local">
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Quantity</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="01" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="down-resposive">
+                                    <div class="input-group">
+                                        <label>Price</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="2000" required>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Fee</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="0" required>
+                                        </div>
+                                    </div>
+                                    <input type="submit" class="res-btn">
+                                    <img src="xmark.svg" alt="mark">
+                                </div>
+                                <div  class="pop-btn ">
+                                    <div class="trade-bg">
+                                        <img src="trade.svg" alt="trade">
+                                        <span>Add Trade</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div  class="pop-btn up-res-none">
+                                <div class="trade-bg">
+                                    <img src="trade.svg" alt="trade">
+                                    <span>Add Trade</span>
+                                </div>
+                            </div>
+                        </form>
+                      <div class="pop-footer">
+                        <button href="#Delete">Delete</button>
+                        <button href="#save">Save</button>
+                      </div>
+                    </div>
+                    <div id="div4" class="content-div" style="display: none;">
+                        <form>
+                            <div class="setting-grid2">
+                                <div class="input-group input-group1">
+                                    <label>Market</label>
+                                    <div class="input-bg">
+                                        <input type="text" placeholder="Stock" required>
+                                    </div>
+                                </div>
+                                <div class="input-group input-group1">
+                                    <label for="name">Symbol</label>
+                                    <div class="input-bg">
+                                        <input required placeholder="HDFCBANK" type="text">
+                                    </div>
+                                </div>
+                                <div class="input-group input-group2">
+                                    <label>Target</label>
+                                    <div class="input-bg">
+                                        <input required placeholder="2000" type="number">
+                                    </div>
+                                </div>
+                                <div class="input-group input-group2">
+                                    <label>Stop-Loss</label>
+                                    <div class="input-bg">
+                                        <input required placeholder="80" type="number">
+                                    </div>
+                                </div>
+                                <input type="submit" class="submit-pop" value="LONG">
+                            </div>
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Date / Time</th>
+                                        <th>Quantity</th>
+                                        <th>Price</th>
+                                        <th>Fess</th>
+                                        <th>Action</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="datetime-local">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="01" required>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="2000" required>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="2000" required>
+                                            </div>
+                                        </td>
+                                        <td class="buy-bts">
+                                            <div class="td-wrapper">
+                                                <h1>BUY</h1>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="xmrk-btn">
+                                                <img src="xmark.svg" alt="mark">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="datetime-local">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="01" required>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="2000" required>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="2000" required>
+                                            </div>
+                                        </td>
+                                        <td class="buy-bts">
+                                            <div class="td-wrapper">
+                                                <h1>BUY</h1>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="xmrk-btn">
+                                                <img src="xmark.svg" alt="mark">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="datetime-local">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="01" required>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="2000" required>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="2000" required>
+                                            </div>
+                                        </td>
+                                        <td class="buy-bts">
+                                            <div class="td-wrapper">
+                                                <h1>BUY</h1>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="xmrk-btn">
+                                                <img src="xmark.svg" alt="mark">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="datetime-local">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="01" required>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="2000" required>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="td-wrapper">
+                                                <input type="number" placeholder="2000" required>
+                                            </div>
+                                        </td>
+                                        <td class="buy-bts">
+                                            <div class="td-wrapper">
+                                                <h1>BUY</h1>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="xmrk-btn">
+                                                <img src="xmark.svg" alt="mark">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                
+                            </table>
+                            <div class="pop-up-resposive">
+                                <div class="up-resposive">
+                                    <div class="input-group">
+                                        <label>Date / Time</label>
+                                        <div class="input-bg">
+                                            <input type="datetime-local">
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Quantity</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="01" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="down-resposive">
+                                    <div class="input-group">
+                                        <label>Price</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="2000" required>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Fee</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="0" required>
+                                        </div>
+                                    </div>
+                                    <input type="submit" class="res-btn">
+                                    <img src="xmark.svg" alt="mark">
+                                </div>
+                                <div  class="pop-btn ">
+                                    <div class="trade-bg">
+                                        <img src="trade.svg" alt="trade">
+                                        <span>Add Trade</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pop-up-resposive">
+                                <div class="up-resposive">
+                                    <div class="input-group">
+                                        <label>Date / Time</label>
+                                        <div class="input-bg">
+                                            <input type="datetime-local">
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Quantity</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="01" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="down-resposive">
+                                    <div class="input-group">
+                                        <label>Price</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="2000" required>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Fee</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="0" required>
+                                        </div>
+                                    </div>
+                                    <input type="submit" class="res-btn">
+                                    <img src="xmark.svg" alt="mark">
+                                </div>
+                                <div  class="pop-btn ">
+                                    <div class="trade-bg">
+                                        <img src="trade.svg" alt="trade">
+                                        <span>Add Trade</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pop-up-resposive">
+                                <div class="up-resposive">
+                                    <div class="input-group">
+                                        <label>Date / Time</label>
+                                        <div class="input-bg">
+                                            <input type="datetime-local">
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Quantity</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="01" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="down-resposive">
+                                    <div class="input-group">
+                                        <label>Price</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="2000" required>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Fee</label>
+                                        <div class="input-bg">
+                                            <input type="number" placeholder="0" required>
+                                        </div>
+                                    </div>
+                                    <input type="submit" class="res-btn">
+                                    <img src="xmark.svg" alt="mark">
+                                </div>
+                                <div  class="pop-btn ">
+                                    <div class="trade-bg">
+                                        <img src="trade.svg" alt="trade">
+                                        <span>Add Trade</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div  class="pop-btn up-res-none">
+                                <div class="trade-bg">
+                                    <img src="trade.svg" alt="trade">
+                                    <span>Add Trade</span>
+                                </div>
+                            </div>
+                        </form>
+                      <div class="pop-footer">
+                        
+                        <button href="#Delete">Delete</button>
+                        <button href="#save">Save</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+        </div>
+        <div class="main-content">
+          <div class="dashboard-body">
+            <aside class="sidebar">
+                <div class="sidebar12">
+                    <button class="sidebar-toggle" id="sidebarToggle"><img src="menu-bar.svg" alt="bar"></button>
+                    <a href="index.html">
+                      <img class="logo-dash" src="Logo.svg" alt="logo">
+                    </a>
+                </div>
+                <div class="dash-menu">
+                  <ul>
+                    <li >
+                      <a href="dashboard.html">
+                        <img src="dash.svg" alt="dash">
+                        <span>Dashboard</span>
+                      </a>
+                    </li>
+                    <li class="dash-active">
+                      <a href="stats.html">
+                        <img src="status.svg" alt="dash">
+                        <span>Stats</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="calender.html">
+                        <img src="calendar.svg" alt="dash">
+                        <span>Calendar</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="setting.html">
+                        <img src="setting.svg" alt="dash">
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="new-trades">
+                    <a href="#popup1" class="popup-trigger">
+                        <div class="trade-bg">
+                            <img src="trade.svg" alt="trade">
+                            <span>New Trade</span>
+                        </div>
+                    </a>
+                    <a href="#newnote">
+                        <div class="trade-bg">
+                            <img src="note.svg" alt="trade">
+                            <span>New Note</span>
+                        </div>
+                    </a>
+                    <div id="popup1" class="overlay">
+                        <div class="popup">
+                          <div class="pop-bg">
+                            <a class="close" href="#"><img src="xmark.svg" alt="Close"></a>
+                            <h1 id="dynamicHeading1">New Trade</h1> 
+                            <button id="btnGeneral1" class="content-btn active" onclick="changeContent(1, 'New Trade', this, 1)"><h1>General</h1></button>
+                            <button id="btnJournal1" class="content-btn" onclick="changeContent(2, 'Edit Trade', this, 1)"><h1>Journal</h1></button>
+                            <div id="div1" class="content-div">
+                                <form>
+                                    <div class="setting-grid2">
+                                        <div class="input-group input-group1">
+                                            <label>Market</label>
+                                            <div class="input-bg">
+                                                <input type="text" placeholder="Stock" required>
+                                            </div>
+                                        </div>
+                                        <div class="input-group input-group1">
+                                            <label for="name">Symbol</label>
+                                            <div class="input-bg">
+                                                <input required placeholder="HDFCBANK" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="input-group input-group2">
+                                            <label>Target</label>
+                                            <div class="input-bg">
+                                                <input required placeholder="2000" type="number">
+                                            </div>
+                                        </div>
+                                        <div class="input-group input-group2">
+                                            <label>Stop-Loss</label>
+                                            <div class="input-bg">
+                                                <input required placeholder="80" type="number">
+                                            </div>
+                                        </div>
+                                        <input type="submit" class="submit-pop input-group2" value="LONG">
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Date / Time</th>
+                                                <th>Quantity</th>
+                                                <th>Price</th>
+                                                <th>Fess</th>
+                                                <th>Action</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="datetime-local">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="01" required>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="2000" required>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="2000" required>
+                                                    </div>
+                                                </td>
+                                                <td class="buy-bts">
+                                                    <div class="td-wrapper">
+                                                        <h1>BUY</h1>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="xmrk-btn">
+                                                        <img src="xmark.svg" alt="mark">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        
+                                    </table>
+                                    <div class="pop-up-resposive">
+                                        <div class="up-resposive">
+                                            <div class="input-group">
+                                                <label>Date / Time</label>
+                                                <div class="input-bg">
+                                                    <input type="datetime-local">
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <label>Quantity</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="01" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="down-resposive">
+                                            <div class="input-group">
+                                                <label>Price</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="2000" required>
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <label>Fee</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="0" required>
+                                                </div>
+                                            </div>
+                                            <input type="submit" class="res-btn">
+                                            <img src="xmark.svg" alt="mark">
+                                        </div>
+                                        <div  class="pop-btn ">
+                                            <div class="trade-bg">
+                                                <img src="trade.svg" alt="trade">
+                                                <span>Add Trade</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div  class="pop-btn up-res-none">
+                                        <div class="trade-bg">
+                                            <img src="trade.svg" alt="trade">
+                                            <span>Add Trade</span>
+                                        </div>
+                                    </div>
+                                </form>
+                              <div class="pop-footer">
+                                <button href="#Delete">Delete</button>
+                                <button href="#save">Save</button>
+                              </div>
+                            </div>
+                            <div id="div2" class="content-div" style="display: none;">
+                                <form>
+                                    <div class="setting-grid2">
+                                        <div class="input-group input-group1">
+                                            <label>Market</label>
+                                            <div class="input-bg">
+                                                <input type="text" placeholder="Stock" required>
+                                            </div>
+                                        </div>
+                                        <div class="input-group input-group1">
+                                            <label for="name">Symbol</label>
+                                            <div class="input-bg">
+                                                <input required placeholder="HDFCBANK" type="text">
+                                            </div>
+                                        </div>
+                                        <div class="input-group input-group2">
+                                            <label>Target</label>
+                                            <div class="input-bg">
+                                                <input required placeholder="2000" type="number">
+                                            </div>
+                                        </div>
+                                        <div class="input-group input-group2">
+                                            <label>Stop-Loss</label>
+                                            <div class="input-bg">
+                                                <input required placeholder="80" type="number">
+                                            </div>
+                                        </div>
+                                        <input type="submit" class="submit-pop" value="LONG">
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Date / Time</th>
+                                                <th>Quantity</th>
+                                                <th>Price</th>
+                                                <th>Fess</th>
+                                                <th>Action</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="datetime-local">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="01" required>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="2000" required>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="2000" required>
+                                                    </div>
+                                                </td>
+                                                <td class="buy-bts">
+                                                    <div class="td-wrapper">
+                                                        <h1>BUY</h1>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="xmrk-btn">
+                                                        <img src="xmark.svg" alt="mark">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="datetime-local">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="01" required>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="2000" required>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="2000" required>
+                                                    </div>
+                                                </td>
+                                                <td class="buy-bts">
+                                                    <div class="td-wrapper">
+                                                        <h1>BUY</h1>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="xmrk-btn">
+                                                        <img src="xmark.svg" alt="mark">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="datetime-local">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="01" required>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="2000" required>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="2000" required>
+                                                    </div>
+                                                </td>
+                                                <td class="buy-bts">
+                                                    <div class="td-wrapper">
+                                                        <h1>BUY</h1>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="xmrk-btn">
+                                                        <img src="xmark.svg" alt="mark">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="datetime-local">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="01" required>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="2000" required>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="td-wrapper">
+                                                        <input type="number" placeholder="2000" required>
+                                                    </div>
+                                                </td>
+                                                <td class="buy-bts">
+                                                    <div class="td-wrapper">
+                                                        <h1>BUY</h1>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="xmrk-btn">
+                                                        <img src="xmark.svg" alt="mark">
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        
+                                    </table>
+                                    <div class="pop-up-resposive">
+                                        <div class="up-resposive">
+                                            <div class="input-group">
+                                                <label>Date / Time</label>
+                                                <div class="input-bg">
+                                                    <input type="datetime-local">
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <label>Quantity</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="01" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="down-resposive">
+                                            <div class="input-group">
+                                                <label>Price</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="2000" required>
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <label>Fee</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="0" required>
+                                                </div>
+                                            </div>
+                                            <input type="submit" class="res-btn">
+                                            <img src="xmark.svg" alt="mark">
+                                        </div>
+                                        <div  class="pop-btn ">
+                                            <div class="trade-bg">
+                                                <img src="trade.svg" alt="trade">
+                                                <span>Add Trade</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pop-up-resposive">
+                                        <div class="up-resposive">
+                                            <div class="input-group">
+                                                <label>Date / Time</label>
+                                                <div class="input-bg">
+                                                    <input type="datetime-local">
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <label>Quantity</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="01" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="down-resposive">
+                                            <div class="input-group">
+                                                <label>Price</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="2000" required>
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <label>Fee</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="0" required>
+                                                </div>
+                                            </div>
+                                            <input type="submit" class="res-btn">
+                                            <img src="xmark.svg" alt="mark">
+                                        </div>
+                                        <div  class="pop-btn ">
+                                            <div class="trade-bg">
+                                                <img src="trade.svg" alt="trade">
+                                                <span>Add Trade</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pop-up-resposive">
+                                        <div class="up-resposive">
+                                            <div class="input-group">
+                                                <label>Date / Time</label>
+                                                <div class="input-bg">
+                                                    <input type="datetime-local">
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <label>Quantity</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="01" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="down-resposive">
+                                            <div class="input-group">
+                                                <label>Price</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="2000" required>
+                                                </div>
+                                            </div>
+                                            <div class="input-group">
+                                                <label>Fee</label>
+                                                <div class="input-bg">
+                                                    <input type="number" placeholder="0" required>
+                                                </div>
+                                            </div>
+                                            <input type="submit" class="res-btn">
+                                            <img src="xmark.svg" alt="mark">
+                                        </div>
+                                        <div  class="pop-btn ">
+                                            <div class="trade-bg">
+                                                <img src="trade.svg" alt="trade">
+                                                <span>Add Trade</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div  class="pop-btn up-res-none">
+                                        <div class="trade-bg">
+                                            <img src="trade.svg" alt="trade">
+                                            <span>Add Trade</span>
+                                        </div>
+                                    </div>
+                                </form>
+                              <div class="pop-footer">
+                                <button href="#Delete">Delete</button>
+                                <button href="#save">Save</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                </div>
+        
+              </aside>
+            <div class="content-area">
+              <header class="header">
+                <div class="das-header-content">
+                    <h1>Stats</h1>
+                    <p>You can track journal data in this dashboard</p>
+                </div>
+                <div class="das-header-content2">
+                    <div class="search-box">
+                        <img src="search.svg" alt="search">
+                        <input type="search" placeholder="Search" id="gsearch">
+                    </div>
+                    <div class="filter">
+                        <img src="Filter Icon.svg" class="filter-img" alt="filter">
+                        <h4>Filters</h4>
+                        <img src="down-arrow.svg" class="down-arrow" alt="arrow">
+                    </div>
+                </div>
+              </header>
+              <div class="main-dashboard-content">
+                <div>
+                <div class="stats-profit">
+                    <div class="stats-card">
+                        <p>WIN RATE</p>
+                        <h1>67%</h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                    <div class="stats-card">
+                        <p>EXPECTANCY</p>
+                        <h1>31</h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                    <div class="stats-card">
+                        <p>PROFIT FACTOR</p>
+                        <h1>1.47s</h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                    <div class="stats-card">
+                        <p>AVG WIN HOLD</p>
+                        <h1>-</h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                    <div class="stats-card">
+                        <p>AVG LOSS HOLD</p>
+                        <h1>8.0 Days</h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                    <div class="stats-card">
+                        <p>AVG LOSS</p>
+                        <h1>-$198.00 <span>(-3.7%)</span></h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                </div>
+                <div class="stats-profit2">
+                    <div class="stats-card">
+                        <p>AVG WIN</p>
+                        <h1>$146.00<span>(10.1%)</span></h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                    <div class="stats-card">
+                        <p>WIN STREAK</p>
+                        <h1>2</h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                    <div class="stats-card">
+                        <p>LOSS STREAK</p>
+                        <h1>1</h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                    <div class="stats-card">
+                        <p>TOP LOSS</p>
+                        <h1>-$198.00<span>(-3.7%)</span></h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                    <div class="stats-card">
+                        <p>TOP WIN</p>
+                        <h1>$242.00<span>(11.0%)</span></h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                    <div class="stats-card">
+                        <p>AVG DAILY VOL</p>
+                        <h1>300</h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                    <div class="stats-card">
+                        <p>AVG SIZE</p>
+                        <h1>100</h1>
+                        <div class="card-side-line"></div>
+                    </div>
+                </div>
+                <div class="stats-chart">
+                    <h1>Line Chart</h1>
+                    <div class="chart-container">
+                        <svg viewBox="0 0 317 120" xmlns="http://www.w3.org/2000/svg" class="chart" style="width: 100%;">
+                            <defs>
+                                <linearGradient id="chartGradientFill" x1="8.64545" y1="0" x2="195.455" y2="120" gradientUnits="userSpaceOnUse">
+                                    <stop offset="0%" stop-color="#85FFC4" />
+                                    <stop offset="41%" stop-color="#5CC6FF" />
+                                    <stop offset="85%" stop-color="#BC85FF" />
+                                </linearGradient>
+                            </defs>
+                            <path 
+                                d="M53.1276 65.9415C7.13942 36.5232 5.94226 62.2256 0 87H317V21.2514C314.038 27.9476 304.427 44.4262 289.676 56.7706C274.926 69.115 274.126 39.8844 258.554 43.1071C209.26 50.6566 214.828 43.4055 165.36 15.7058C136.361 -0.532038 134.59 -18.7996 101.606 43.1071C82.7821 78.4388 80.5768 81.1644 53.1276 65.9415Z" 
+                                fill="url(#chartGradientFill)" 
+                                opacity="0.1" 
+                            />
+                            <path 
+                                d="M0 87C6.94226 62.2256 8.13942 36.5232 54.1276 65.9415C81.5768 81.1644 83.7821 78.4388 102.606 43.1071C135.59 -17.7996 137.361 0.467962 166.36 16.7058C215.828 44.4055 210.26 51.6566 259.554 44.1071C275.126 40.8844 275.926 70.115 290.676 57.7706C305.427 45.4262 315.038 28.9476 318 22.2514" 
+                                stroke="url(#chartGradientFill)" 
+                                stroke-width="1" 
+                                stroke-linecap="round" 
+                                stroke-linejoin="round" 
+                                fill="none" 
+                            />
+                            <circle cx="115" cy="20" r="5" fill="#ffffff" stroke="#1A212D" stroke-width="1" />
+
+                            <rect x="97" y="6" width="16" height="9" rx="2" fill="#ffffff"  stroke-width="1" />
+                            <text x="105" y="11" font-size="4px" fill="#5C5F62" text-anchor="middle" alignment-baseline="middle">
+                                45%
+                            </text>
+                        </svg>
+                        <!-- Month labels (Outside of SVG, inside the container) -->
+                        <div class="months-container">
+                            <div class="month">Jan</div>
+                            <div class="month">Feb</div>
+                            <div class="month">Mar</div>
+                            <div class="month">Apr</div>
+                            <div class="month">May</div>
+                            <div class="month">Jun</div>
+                            <div class="month">Jul</div>
+                            <div class="month">Aug</div>
+                            <div class="month">Sep</div>
+                            <div class="month">Oct</div>
+                            <div class="month">Nov</div>
+                            <div class="month">Dec</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="tags-tbl-main">
+                    <div class="tags-tbl">
+                        <table >
+                          <thead>
+                            <tr>
+                              <th>Tag</th>
+                              <th>Trades</th>
+                              <th>PnL</th>
+                              <th>PnL %</th>
+                              <th>Weighted %</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>consolidation</td>
+                              <td>1</td>
+                              <td>$242.00</td>
+                              <td>10.96%</td>
+                              <td>257.45%</td>
+                            </tr>
+                            <tr>
+                              <td>bottom-bounce</td>
+                              <td>1</td>
+                              <td>$50.00</td>
+                              <td>9.26%</td>
+                              <td>53.19%</td>
+                            </tr>
+                            <tr>
+                              <td>momentum</td>
+                              <td>1</td>
+                              <td>-$198.00</td>
+                              <td>-3.68%</td>
+                              <td>210.64%</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                    <div class="tags-tbl">
+                        <table >
+                          <thead>
+                            <tr>
+                              <th>Symbol</th>
+                              <th>Trades</th>
+                              <th>PnL</th>
+                              <th>PnL %</th>
+                              <th>Weighted %</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>BROS</td>
+                              <td>1</td>
+                              <td>$242.00</td>
+                              <td>10.96%</td>
+                              <td>38.84%</td>
+                            </tr>
+                            <tr>
+                              <td>bottom-bounce</td>
+                              <td>2</td>
+                              <td>-$148.00</td>
+                              <td>-2.50%</td>
+                              <td>37.90%</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer>
+            <div class="ft-container">
+                <div class="ft-main">
+                    <p>© 2023, All Rights Reserved to TickJournal</p>
+                    <ul>
+                        <li><a href="#terms"><img src="Vector-ft.svg" alt=""><span>Terms</span></a></li>
+                        <li><a href="#privacy"><img src="Vector-ft.svg" alt=""><span>Privacy</span></a></li>
+                        <li><a href="#support"><img src="Vector-ft.svg" alt=""><span>Support</span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+      </div>
+      <script src="dash-sidebar.js"></script>
+      <script src="dashboard.js"></script>
+</body>
+</html>
