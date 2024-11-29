@@ -20,7 +20,7 @@ fileInput.addEventListener('change', function () {
 });
 
 function deleteImage() {
-  imagePreview.src = '../media/preview.svg'; 
+  imagePreview.src = 'preview.svg'; 
   deleteButton.style.display = 'block';
   fileInput.value = ''; 
 }
