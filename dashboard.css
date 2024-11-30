@@ -776,18 +776,19 @@ input[type="number"]::-webkit-outer-spin-button {
     background-color: var(--primary-color);
 }
 @media (max-width: 850px) {
-    .main-dashboard-content{
-        padding: 0 0  100px 0;
+      .main-dashboard-content{
+        padding: 0 0  60px 0;
     }
     .content-area header{
         position: relative;
         z-index: 0;
     }
-    .ft-container{
+    /* sticky footer css */
+    /* .ft-container{
         position: fixed;
         bottom: 0;
         background-color: var(--primary-color);
-    }
+    } */
     .content-area{
         overflow-y: scroll; 
         overflow-x: hidden; 
